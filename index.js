@@ -19,7 +19,7 @@ function createCoords(){
     const R = 6371; // raio da Terra em km
     const lat0 = -20.3167; // latitude da Curva da Jurema, ES
     const lon0 = -40.2999; // longitude da Curva da Jurema, ES
-    const n = 10; // número de pontos no círculo
+    const n = 1000; // número de pontos no círculo
     const d = 2; // diâmetro do círculo em km
     const speed = 50; // velocidade em km/h
 
@@ -94,7 +94,7 @@ io.on('connection', (socket) => {
   //enviar dados a cada 1 segundos para o cliente
   let coord = 0;
   let intervalo = setInterval(() => {
-      if (coord === 10) {
+      if (coord === 1000) {
           coord = 0;
       }
       const data = convertData(points, coord);
